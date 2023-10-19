@@ -1,2 +1,8 @@
-a, b, c, d, e = map(int, input().split())
-print((a*a+b*b+c*c+d*d+e*e) % 10)
+num = map(int, input().split())
+
+result = 0
+
+for i in num:
+   result += i ** 2
+
+print(result%10)
