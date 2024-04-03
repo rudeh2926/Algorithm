@@ -1,32 +1,21 @@
 from collections import deque
 import sys
 
-n = int(sys.stdin.readline())
-q = deque()
+n = int(sys.stdin.readline().strip())
+b = deque()
 
 for i in range(n):
-    a = list(sys.stdin.readline().split())
+    a = sys.stdin.readline().strip().split()
+    c = lambda x: print(x)
     if a[0] == 'push':
-        q.append(a[1])
+        b.append(a[1])
     elif a[0] == 'pop':
-        if len(q) == 0:
-            print(-1)
-        else:
-            print(q.popleft())
+        c(b.popleft() if b else -1)
     elif a[0] == 'size':
-        print(len(q))
+        c(len(b))
     elif a[0] == 'empty':
-        if len(q) == 0:
-            print(1)
-        else:
-            print(0)
+        c(1 if not b else 0)
     elif a[0] == 'front':
-        if len(q) == 0:
-            print(-1)
-        else:
-            print(q[0])
+        c(b[0] if b else -1)
     elif a[0] == 'back':
-        if len(q) == 0:
-            print(-1)
-        else:
-            print(q[-1])
+        c(b[-1] if b else -1)
