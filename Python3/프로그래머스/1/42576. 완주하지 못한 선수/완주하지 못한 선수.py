@@ -1,20 +1,11 @@
 def solution(participant, completion):
-    a = 0
-    b = {}
+    a = {}
+    b = 0
+    for i in participant:
+        a[hash(i)] = i
+        b += hash(i)
 
-    for c in participant:
-        a += hash(c)
-        if c in b: # 동명이인이 있다면 +1 함
-            b[c] += 1
-        else: # 아니면 그냥 1 추가
-            b[c] = 1
+    for j in completion:
+        b -= hash(j)
 
-    for c in completion:
-        a -= hash(c)
-        b[c] -= 1
-
-    for c, count in b.items():
-        if count == 1:
-            return c
-
-    return None  
+    return a[b] 
