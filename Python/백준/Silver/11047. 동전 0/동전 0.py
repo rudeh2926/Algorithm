@@ -1,8 +1,7 @@
-import sys
-a, b = map(int, sys.stdin.readline().split())
+a, b = map(int, input().split())
 m = []
 for i in range(a):
-    m.append(int(sys.stdin.readline()))
+    m.append(int(input()))
 m = sorted(m, reverse=True)
 
 c = 0
