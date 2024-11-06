@@ -1,0 +1,7 @@
+a = int(input())
+b = int(input())
+c = int(input())
+print(a+b-c)
+sa = str(a)
+sb = str(b)
+print(int(sa+sb)-c)
