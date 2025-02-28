@@ -1,3 +1,8 @@
-import math
+def factorial(n):
+    if n > 1:
+        return  n * factorial(n - 1)
+    else:
+        return 1
+
 a = int(input())
-print(math.factorial(a))
+print(factorial(a))
