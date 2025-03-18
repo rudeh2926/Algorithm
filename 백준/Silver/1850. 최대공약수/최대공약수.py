@@ -1,3 +1,4 @@
-import math
 a, b = map(int, input().split())
-print("1"*math.gcd(a, b))
+while b > 0:
+    a, b = b, a % b
+print('1'*a)
